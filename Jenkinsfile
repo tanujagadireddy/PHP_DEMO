@@ -2,7 +2,7 @@ pipeline{
     agent any
     environment{
         DEV_SERVER = 'ec2-user@172.31.15.51'
-        DEPLOY_SERVER = 'ec2-user@xxxxx'
+        DEPLOY_SERVER = 'ec2-user@172.31.14.64'
         IMAGE_NAME='devopstrainer/java-mvn-private-repos:php$BUILD_NUMBER'
     }
 
