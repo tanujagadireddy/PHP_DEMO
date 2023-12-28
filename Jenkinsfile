@@ -24,6 +24,7 @@ pipeline{
         }
         }
         stage("Deploy the microsvc app"){
+            steps{
             script{
                  sshagent(['build-server']) {
                     withCredentials([usernamePassword(credentialsId: 'docker-hub', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
@@ -38,3 +39,4 @@ pipeline{
         }
         }
         }
+}
