@@ -11,7 +11,7 @@ pipeline{
         stage("Build the dockerimage for php and push to private registry"){
             steps{
             script{
-                 sshagent(['build_server']) {
+                 sshagent(['build-server']) {
                     withCredentials([usernamePassword(credentialsId: 'docker-hub', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
                     sh "scp -o strictHostKeyChecking=no -r devserverconfig ${DEV_SERVER_IP}:/home/ec2-user"
                     sh "ssh -o strictHostKeyChecking=no ${DEV_SERVER_IP} 'bash ~/devserverconfig/docker-script.sh"
