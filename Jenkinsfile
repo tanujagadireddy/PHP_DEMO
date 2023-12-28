@@ -9,6 +9,7 @@ pipeline{
 
     stages{
         stage("Build the dockerimage for php and push to private registry"){
+            steps{
             script{
                  sshagent(['build_server']) {
                     withCredentials([usernamePassword(credentialsId: 'docker-hub', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
@@ -19,6 +20,7 @@ pipeline{
                     sh "ssh  ${DEV_SERVER_IP} sudo docker push ${IMAGE_NAME}"
                 }
             }
+        }
         }
         }
         // stage("Deploy the microsvc app"){
