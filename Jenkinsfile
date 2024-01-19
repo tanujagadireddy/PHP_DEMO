@@ -1,11 +1,11 @@
 pipeline{
     agent none
     environment{
-        BUILD_SERVER_IP='ec2-user@172.31.38.14'
+        BUILD_SERVER_IP='ec2-user@172.31.1.199'
         //DEPLOY_SERVER_IP='ec2-user@13.234.240.74'
         IMAGE_NAME='devopstrainer/java-mvn-privaterepos:php$BUILD_NUMBER'     
-        ACM_IP='ec2-user@172.31.41.156'
-        AWS_ACCESS_KEY_ID =credentials("AWS_ACCESS_KEY_ID")
+        ACM_IP='ec2-user@172.31.8.121'
+        AWS_ACCESS_KEY_ID =credentials("AWS_ACCESS_KEY_IDd")
         AWS_SECRET_ACCESS_KEY=credentials("AWS_SECRET_ACCESS_KEY")
         //created a new credential of type secret text to store docker pwd
         DOCKER_REG_PASSWORD=credentials("DOCKER_REG_PASSWORD")
