@@ -1,7 +1,7 @@
 version: "3.8"
 services:
     web:
-      image: devopstrainer/java-mvn-privaterepos:php8
+      image: "${DOCKER_PHP_IMAGE}"
       ports:
       - "8001:80"
       deploy:
