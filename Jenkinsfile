@@ -32,7 +32,7 @@ pipeline{
                     sh "ssh -o strictHostKeyChecking=no ${DEPLOY_SERVER_IP} 'bash ~/deployserverconfig/docker-script.sh'"
                     //sh "ssh  ${DEV_SERVER_IP} sudo docker build -t ${IMAGE_NAME} ~/devserverconfig"
                     sh "ssh  ${DEPLOY_SERVER_IP} sudo docker login -u $USERNAME -p $PASSWORD"
-                    sh "ssh  ${DEPLOY_SERVER_IP} 'bash ~/deployserverconfig/compose-script.sh ${IMAGE_NAME}'"
+                    sh "ssh  ${DEPLOY_SERVER_IP} bash ~/deployserverconfig/compose-script.sh ${IMAGE_NAME}"
                 }
             }
         }
