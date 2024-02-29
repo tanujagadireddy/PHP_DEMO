@@ -3,8 +3,8 @@ pipeline{
 
     environment{
         IMAGE_NAME='devopstrainer/java-mvn-privaterepos:php$BUILD_NUMBER'
-        DEV_SERVER_IP='ec2-user@172.31.47.16'
-        DEPLOY_SERVER_IP='ec2-user@3.110.56.23'
+        DEV_SERVER_IP='ec2-user@172.31.40.70'
+        DEPLOY_SERVER_IP='ec2-user@172.31.42.128'
     }
 
     stages{
